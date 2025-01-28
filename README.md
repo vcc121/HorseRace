@@ -1,6 +1,6 @@
 # HorseRace
-#include <iostream>
-#include <random>
+include <iostream>
+include <random>
 set TRACK_LENGTH constant
 
 advance function
