@@ -1,33 +1,33 @@
 # HorseRace
 include <iostream>
 include <random>
-set TRACK_LENGTH constant
+set TRACK_LENGTH constant to 15
+set HORSES_NUMBER constant to 5
 
 advance function
-  performs a "coin flip" to decide whether the horse advances or not
-  use random for coin flip
-  if 'heads', move forward, if 'tails' stay in same spot
-    this will likely be 0 for heads and 1 for tails, but is subject to change
-        if heads, increase horse position
-  temp to store horses location
-  will not return a value
+  performs a "coin flip" (random 0 or 1) to decide if the horse moves forward
+  if '1' (heads), increase horse position by 1
+  if '0' (tails), horse stays in the same position
+  does not return a value, just updates horse's position
 
 printLane function
-  use for loop for printing lane
-    i as sentry, end when i = 16
-    if i = horses position, print number in lane
-    else print dot
-    print updated lane each time
+  use a for loop to print the race track
+    loop from 0 to TRACK_LENGTH (15)
+    if i matches horse's position, print horse number
+    otherwise, print a dot
+  print a newline after each lane
 
 bool isWinner function
-  if 15th value of array is not a dot, return true
+  checks if horse has reached or passed TRACK_LENGTH
+  if true, print winner message and return true
   else return false
 
-main
-  make an array called horses that contains 5 zeros (representing their position)
-  for loop (i sentry)
-    end when i gets to 5
-    call advance function with i and the array
-    call printLane
-    
-  while keepGoing = true
+main function
+  create an array called horses with 5 elements, all set to 0 (starting positions)
+  set keepGoing to true
+  while keepGoing is true
+    for each horse (loop from 0 to HORSES_NUMBER-1)
+      call advance function with horse index and horses array
+      call printLane function to display updated position
+      if isWinner returns true, set keepGoing to false
+    wait for user to press enter before continuing next round
