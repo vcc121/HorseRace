@@ -1,8 +1,8 @@
 #include <iostream>
 #include <random>
 
-const int TRACK_LENGTH = 15
-const int HORSES_NUMBER = 5
+const int TRACK_LENGTH = 15;
+const int HORSES_NUMBER = 5;
 
 void advance(int horseNum, int* horses);
 void printLane(int horseNum, int* horses):
